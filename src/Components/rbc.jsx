@@ -55,7 +55,7 @@ export default function Wellify() {
             onClick={handleExpandClick}
             className={styles.card}>
             <CardContent className={styles.cardContent}>
-                <img className={styles.imageLogin} alt="logo" src="/image.png" />
+                {/* <img className={styles.imageLogin} alt="logo" src="/image.png" /> */}
                 <div className={styles.text}>
                     <strong>designer + developer</strong>  |  RBC 'next great innovator' 
                     </div>

@@ -55,7 +55,7 @@ export default function Wellify() {
             onClick={handleExpandClick}
             className={styles.card}>
             <CardContent className={styles.cardContent}>
-                <img className={styles.imageLogin} alt="logo" src="/image.png" />
+                {/* <img className={styles.imageLogin} alt="logo" src="/image.png" /> */}
                 <div className={styles.text}>
                     <strong>product designer</strong>  |  NASA space apps hackathon
                     </div>

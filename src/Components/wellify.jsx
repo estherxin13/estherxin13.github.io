@@ -1,18 +1,18 @@
 import React from 'react';
-import { Card, CardActions, CardContent, Collapse, IconButton, makeStyles, Typography } from '@material-ui/core';
-import clsx from 'clsx';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Card, CardActions, CardContent, IconButton, makeStyles, Typography } from '@material-ui/core';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import WebIcon from '@material-ui/icons/Web';
+
 
 const useStyles = makeStyles(theme => ({
     card: {
-        textAlign: 'center',
-        marginBottom: theme.spacing(6),
+        textAlign: 'left',
+        marginBottom: theme.spacing(5),
         borderRadius: 7,
         boxShadow: '0px 4px 9px 4px rgba(212,212,212)',
         '&:hover': {
             boxShadow: '0px 4px 9px 4px rgba(208, 139, 127, 0.4)',
-            cursor: 'pointer',
-          },
+        },
     },
     expand: {
         transform: 'rotate(0deg)',
@@ -26,18 +26,27 @@ const useStyles = makeStyles(theme => ({
     },
     text: {
         fontSize: 15,
+        marginTop: theme.spacing(2),
     },
     imageLogin: {
-        width: 488,
+        width: 450,
+        marginRight: theme.spacing(5),
+        marginLeft: theme.spacing(5),
         border: '2px solid black',
         borderRadius: 7,
-        marginBottom: theme.spacing(1),
         [theme.breakpoints.down('md')]: {
             display: 'none'
         },
     },
     cardContent: {
         paddingTop: theme.spacing(5),
+        paddingBottom: theme.spacing(5),
+        display: 'flex'
+    },
+    icon: {
+        color: 'grey',
+        textAlign: 'center',
+        // marginTop: theme.spacing(1),
     }
 }));
 
@@ -56,32 +65,34 @@ export default function Wellify() {
             className={styles.card}>
             <CardContent className={styles.cardContent}>
                 <img className={styles.imageLogin} alt="logo" src="/wellify.png" />
-                <div className={styles.text}>
+                <div className={styles.title}>
                     <strong>Software developer</strong>  |  Year Zero Studios
-                </div>
-            </CardContent>
-            <CardActions>
-                <IconButton
-                    className={clsx(styles.expand, {
-                        [styles.expandOpen]: expanded,
-                    })}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                >
-                    <ExpandMoreIcon fontSize='large'/>
-                </IconButton>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
                     <Typography className={styles.text}>
+                        Wellify is a booking and payment platform.
+                        <br />
+                        Typescript, React Hooks, FireBase, Stripe and Zoom API.
+                        <br />
+                        Also did design reviews, PM, increase users by 75%.
                         Typescript, React Hooks, FireBase, Stripe and Zoom API
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Maecenas fermentum gravida risus, mollis pharetra
                         eros molestie sed. Mauris sollicitudin erat eget
                         diam laoreet, et commodo mi cursus. Class aptent taciti
-            </Typography>
-                </CardContent>
-            </Collapse>
-        </Card>
+                </Typography>
+                    <div className={styles.icon}>
+                        <IconButton>
+                            <a className={styles.link} target="_blank" rel="noopener noreferrer" href="https://github.com/estherxin13">
+                                <GitHubIcon className={styles.icon} />
+                            </a>
+                        </IconButton>
+                        <IconButton>
+                            <a className={styles.link} target="_blank" rel="noopener noreferrer" href="https://app.wellify.studio/">
+                                <WebIcon className={styles.icon} />
+                            </a>
+                        </IconButton>
+                    </div>
+                </div>
+            </CardContent>
+        </Card >
     );
 }

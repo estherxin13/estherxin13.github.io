@@ -1,6 +1,6 @@
 import Typical from 'react-typical';
 import { makeStyles } from '@material-ui/core/styles';
-import Project from '../Components/projects';
+import Project2 from '../Components/project2';
 
 
 const Home = () => {
@@ -63,7 +63,7 @@ const Home = () => {
                     ]}
                 />
             </div>
-            <Project />
+            <Project2 />
         </>
     )
 }
